@@ -5,10 +5,16 @@
 
 using namespace std;
 
-class Disks : public vector<vector<string>> { 
+typedef vector<string> record;
+typedef vector<vector<string>> records;
+typedef vector<vector<string>> vecString;
+
+class Disks : public vecString { 
 public:
 	Disks() {};
-	Disks(vector<vector<string>> s) {};
+	Disks(vecString s) {};
 	~Disks() {};
-
+	void buyDisk(records& all, int id, int amount);
+	void sellDisk(records& all, int id, int amount);
+	void printLog();
 };

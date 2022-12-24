@@ -1,6 +1,13 @@
 #include "functions.hpp"
 
 ostream& naglowek(ostream& b) {
+	time_t currTime;
+	tm* currTm;
+	time(&currTime);
+	currTm = localtime(&currTime);
+	char currDate[100];
+	strftime(currDate, 50, "%Y-%m-%d", currTm);
+	cout << endl << setw(70) << internal << "Today's date: \t" << currDate << endl;
 	b << "+-----------------------------------------------------------------------------------------------------------------------------------------+" << endl;
 	b << "|";
 	b << setw(22);

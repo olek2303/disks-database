@@ -1,8 +1,10 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <ctime>
 #include "./SQLite/sqlite3.h"
 
 using namespace std;
