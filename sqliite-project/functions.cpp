@@ -1,5 +1,15 @@
 #include "functions.hpp"
 
+void showMenu() {
+	cout << "MENU:" << endl;
+	cout << "0. Koniec." << endl;
+	cout << "1. Wyswietl liste wszystkich plyt." << endl;
+	cout << "2. Wyswietl liste ostatnio sprzedanych plyt." << endl;
+	cout << "3. Wyswietl liste ostatnio kupionych plyt." << endl;
+	cout << "4. Sprzedaj plyte." << endl;
+	cout << "5. Kup plyte." << endl;
+}
+
 ostream& naglowek(ostream& b) {
 	time_t currTime;
 	tm* currTm;
@@ -146,6 +156,25 @@ void pokaz_liste(records& all) {
 		it++;
 	}
 	cout << stopka;
+}
+
+void buyDisk(sqlite3* db) {
+	int id, il, c1, c2;
+	string art, tyt;
+	cout << "Podaj ID: ";
+	cin >> id;
+	cout << "Podaj artyste: ";
+	cin >> art;
+	cout << "Podaj tytul: ";
+	cin >> tyt;
+	cout << "Podaj cena1: ";
+	cin >> c1;
+	cout << "Podaj cena2: ";
+	cin >> c2;
+	cout << "Podaj ilosc: ";
+	cin >> il;
+	int exit = sqlite3_open("disks.db", &db);
+	insert_to_table(db, id, art, tyt, c1, c2, il);
 }
 
 /*

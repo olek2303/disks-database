@@ -12,6 +12,7 @@ using namespace std;
 typedef vector<string> record;
 typedef vector<vector<string>> records;
 
+void showMenu();
 ostream& naglowek(ostream& b);
 ostream& stopka(ostream& b);
 ostream& operator<<(ostream& b, record& r);
@@ -22,3 +23,4 @@ void insert_to_table(sqlite3* db, int i, string a, string t, int pg, int ps, int
 records select_stmt(sqlite3* db, const char* stmt);
 void sql_stmt(sqlite3* db, const char* stmt);
 void pokaz_liste(records& r);
+void buyDisk(sqlite3* db);
